@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title>
+		PRO HACKER OFFICIAL
+	</title>
+	<link rel="stylesheet" type="text/css" href =" main.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
+
+<link rel="icon" href="logo.png" type="image/x-icon"/>
+
+</head>
+<body oncontextmenu="return false;">
+	<section id = "particles-js">
+		<div class = "text">
+			<h2><span id = "mm">Pro Hackers</span></h2>
+
+    <div class="bar">
+    	<form method="get" action="https://www.google.com/search" >
+      <input class="searchbar" type="text" title="Search" name="q"  id="transcript" autofocus>
+
+       <img class="voice" onclick="startDictation()"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png" title="Search by Voice">
+       <img class="s" src = "s.png"></form>
+  </div>
+    
+		</div>
+		<div class="mosque">
+		</div>
+	</section>
+	<script src="particles.js"></script>
+	<script src="app.js"></script>
+
+    <script>
+
+      function startDictation() {
+
+        if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+          var recognition = new webkitSpeechRecognition();
+
+          recognition.continuous = false;
+          recognition.interimResults = false;
+          recognition.lang = "en-US";
+          recognition.start();
+
+          recognition.onresult = function (e) {
+            document.getElementById('transcript').value = e.results[0][0].transcript;
+            recognition.stop();
+            document.getElementById('labnol').submit();
+          };
+          recognition.onerror = function(e) {
+            recognition.stop();
+          }
+        }
+      }
+
+    </script>
+	<script type="text/javascript">
+		var a = prompt("Enter Your Name");
+		document.getElementById("mm").innerHTML=a;
+if(a== null || a== false){
+			document.getElementById("mm").innerHTML="Null";
+
+}
+
+	</script>
+</body>
+</html>
